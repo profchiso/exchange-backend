@@ -1,0 +1,17 @@
+{
+  "name": "redacre-code-challenge-backend",
+  "version": "1.0.0",
+  "description": "Exchange of crypto with fiat currency app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Exchange",
+    "Crypto",
+    "Currency",
+    "Fiat"
+  ],
+  "author": "Okorie Chinedu Sunday",
+  "license": "ISC"
+}
