@@ -2,17 +2,18 @@ const express = require("express");
 const exchangeRouter = express.Router();
 
 
-// const {
-//     createAccountGroup,
-//     createAccountLedger,
-//     postEntry,
-//     createCityLedger,
-// } = require("../../controllers/account");
+const {
+    getAll,
+    getById,
+    create,
+    update,
+    remove
+} = require("../../controllers/exchanges");
 
-router.get("/", createAccountGroup);
-router.get("/:id", createAccountLedger);
-router.post("/", createCityLedger);
-router.patch("/:id", postEntry);
-router.delete("/:id", postEntry);
+exchangeRouter.get("/", getAll);
+exchangeRouter.get("/:id", getById);
+exchangeRouter.post("/", create);
+exchangeRouter.patch("/:id", update);
+exchangeRouter.delete("/:id", remove);
 
 module.exports = exchangeRouter;
