@@ -9,8 +9,9 @@ app.use(express.json({ extended: false }));
 app.use(cors());
 const connectToDB = require("./database/dbConnection");
 connectToDB()
+const { undefinedRouter } = require("./routes/undefinedRoutes");
 app.use("/api/v1/exchanges", require("./routes/exchanges"));
-app.use(require("./routes/undefinedRoutes"));
+app.use(undefinedRouter);
 
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => {
