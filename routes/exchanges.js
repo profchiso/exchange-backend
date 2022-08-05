@@ -1,4 +1,5 @@
 const express = require("express");
+const { createExchangeValidation } = require("../utils/validations");
 const exchangeRouter = express.Router();
 
 
@@ -12,7 +13,7 @@ const {
 
 exchangeRouter.get("/", getAll);
 exchangeRouter.get("/:id", getById);
-exchangeRouter.post("/", create);
+exchangeRouter.post("/", createExchangeValidation, create);
 exchangeRouter.patch("/:id", update);
 exchangeRouter.delete("/:id", remove);
 
