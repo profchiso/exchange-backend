@@ -1,0 +1,1 @@
+exports.Currency = ["EUR", "USD", "GBP"]
