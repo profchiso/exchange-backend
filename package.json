@@ -1,27 +1,32 @@
 {
-  "name": "redacre-code-challenge-backend",
-  "version": "1.0.0",
-  "description": "Exchange of crypto with fiat currency app",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Exchange",
-    "Crypto",
-    "Currency",
-    "Fiat"
-  ],
-  "author": "Okorie Chinedu Sunday",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.27.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "moment": "^2.29.4",
-    "mongoose": "^6.5.1",
-    "node-cron": "^3.0.1",
-    "ws": "^8.8.1"
-  }
+    "name": "redacre-code-challenge-backend",
+    "version": "1.0.0",
+    "description": "Exchange of crypto with fiat currency app",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app",
+        "dev": "nodemon app"
+    },
+    "engines": {
+        "node": "18.7.0",
+        "npm": "8.15.0"
+    },
+    "keywords": [
+        "Exchange",
+        "Crypto",
+        "Currency",
+        "Fiat"
+    ],
+    "author": "Okorie Chinedu Sunday",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "moment": "^2.29.4",
+        "mongoose": "^6.5.1",
+        "node-cron": "^3.0.1",
+        "ws": "^8.8.1"
+    }
 }
