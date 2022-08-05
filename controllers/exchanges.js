@@ -1,4 +1,4 @@
-const Exchange = require("../database/model/Exchange");
+const Exchange = require("../database/model/Exchanges");
 exports.getAll = async(req, res) => {
 
     try {

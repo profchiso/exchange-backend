@@ -9,12 +9,12 @@ const {
     create,
     update,
     remove
-} = require("../../controllers/exchanges");
+} = require("../controllers/exchanges");
 
 exchangeRouter.get("/", getAll);
 exchangeRouter.get("/:id", getById);
-exchangeRouter.post("/", createExchangeValidation, create);
-exchangeRouter.patch("/:id", update);
-exchangeRouter.delete("/:id", remove);
+exchangeRouter.post("/", create);
+// exchangeRouter.patch("/:id", update);
+// exchangeRouter.delete("/:id", remove);
 
 module.exports = exchangeRouter;

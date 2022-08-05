@@ -6,15 +6,15 @@ exports.sendLiveExchange = async(req, res) => {}
 exports.getLiveExchange = async(coin) => {
     try {
 
-        let res = await axios.get(`${process.env.COINAPI_URL}/${coin}/?invert=false`, {
+        let res = await axios.get(`${process.env.COINAPI_URL}/${coin}?invert=false`, {
             headers: {
                 "X-CoinAPI-Key": process.env.COINAPI_KEY
             }
         })
-        console.log(res)
+        console.log("res", res)
 
     } catch (error) {
-        console.log.log(error);
+        console.log(error);
 
     }
 

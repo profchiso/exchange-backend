@@ -2,7 +2,8 @@
 require("dotenv").config(); //require the config files
 const express = require("express");
 const cors = require("cors");
-const cronJob = require("node-cron");
+const path = require("path");
+// const cronJob = require("node-cron");
 const moment = require("moment");
 const app = express(); //create an express app
 app.use(express.static(path.join(__dirname, "public")));
