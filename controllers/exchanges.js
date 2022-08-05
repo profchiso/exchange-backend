@@ -64,17 +64,30 @@ exports.getAll = async(req, res) => {
 exports.getById = async(req, res) => {
     try {
 
+        const exchange = await Exchange.findById(req.params.id).select(
+            '-__v'
+        );
+        if (!exchange) {
+            return res.status(404).json({ message: "No record found with the id ${req.params.id}", statusCode: 400 });
+        }
+        res.status(200).json({ message: "Exchange data fetched  successfully", statusCode: 200, data: exchange })
+
     } catch (error) {
         console.log(error);
+        res.status(500).json({ message: error.message || "something went wrong", statusCode: 500 })
 
     }
 
 }
 exports.create = async(req, res) => {
     try {
+        const { currencyFrom, currencyTo, amount1, amount2, type } = req.body
+        const exchange = await Exchange.create({ currencyFrom, currencyTo, amount1, amount2, type })
+        res.status(201).json({ message: "Exchange created  successfully", statusCode: 201, data: exchange })
 
     } catch (error) {
         console.log(error);
+        res.status(500).json({ message: error.message || "something went wrong", statusCode: 500 })
 
     }
 
