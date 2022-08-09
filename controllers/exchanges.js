@@ -94,24 +94,7 @@ exports.create = async(req, res) => {
     }
 
 }
-exports.update = async(req, res) => {
-    try {
 
-    } catch (error) {
-        console.log(error);
-
-    }
-
-}
-exports.remove = async(req, res) => {
-    try {
-
-    } catch (error) {
-        console.log(error);
-
-    }
-
-}
 exports.getLiveCoinToFiat = async(req, res) => {
     try {
         const { coin, fiat, amount1 } = body;

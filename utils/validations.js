@@ -14,21 +14,21 @@ const createExchangeValidation = [
     .notEmpty()
     .withMessage('currencyTo is required')
     .isString()
-    .withMessage('currencyFrom must be a string'),
+    .withMessage('currencyTo must be a string'),
 
     body('amount1')
     .trim()
     .notEmpty()
     .withMessage('amount1 is required')
     .isNumeric()
-    .withMessage('amountTo must be a number'),
+    .withMessage('amount1 must be a number'),
 
     body('amount2')
     .trim()
     .notEmpty()
     .withMessage('amount2 is required')
     .isNumeric()
-    .withMessage('amountTo must be a number'),
+    .withMessage('amount2 must be a number'),
 
     body('type')
     .trim()
@@ -52,5 +52,11 @@ const ExchangeBodyValidation = [
     .withMessage('fiat currency abbreviation is required')
     .isString()
     .withMessage('fiat currency abbreviation must be a string'),
+    body('amount1')
+    .trim()
+    .notEmpty()
+    .withMessage('fiat currency abbreviation is required')
+    .isNumeric()
+    .withMessage('amount1 must be a number')
 ]
 module.exports = { createExchangeValidation, ExchangeBodyValidation }
