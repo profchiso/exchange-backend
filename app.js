@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(cors()); //enable CORS
 const connectToDB = require("./database/dbConnection");
 connectToDB() // function to connect to the database
-const { getLiveExchange } = require("./crons/getLiveExchange")
-getLiveExchange("BTC") // function
+const { getLiveExchange, getLiveExchangesCryptoToFiat, getLiveExchangesCryptoToFiatAndSave } = require("./crons/getLiveExchange")
+    //getLiveExchangesCryptoToFiat("ETH", "GBP") // function
+    //getLiveExchangesCryptoToFiatAndSave() // function
 const { undefinedRouter } = require("./routes/undefinedRoutes");
 
 //define routes
