@@ -8,12 +8,14 @@ const {
     getById,
     create,
     update,
-    remove
+    remove,
+    getLiveCoinToFiat
 } = require("../controllers/exchanges");
 
 exchangeRouter.get("/", getAll);
 exchangeRouter.get("/:id", getById);
 exchangeRouter.post("/", create);
+exchangeRouter.post("/coin-to-fiat", getLiveCoinToFiat);
 // exchangeRouter.patch("/:id", update);
 // exchangeRouter.delete("/:id", remove);
 

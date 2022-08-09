@@ -1,4 +1,6 @@
 const Exchange = require("../database/model/Exchanges");
+const { Currency, Coins } = require("../utils/currency");
+const { getLiveExchangesCryptoToFiat } = require("../crons/getLiveExchange");
 exports.getAll = async(req, res) => {
 
     try {
@@ -108,5 +110,28 @@ exports.remove = async(req, res) => {
         console.log(error);
 
     }
+
+}
+exports.getLiveCoinToFiat = async(req, res) => {
+    try {
+        const { coin, fiat, amount1 } = body;
+        if (!coin || !fiat || !amount1) {
+            return res.status(400).json({ message: "invalid params, coin and fiat must be provided", statusCode: 400 });
+        }
+        const result = await getLiveExchangesCryptoToFiat(coin, fiat);
+        let exchangeObj = {
+            currencyFrom: Coins.filter(coin => coin.symbol === coin)[0].name,
+            currencyTo: fiat,
+            amount1,
+            amount2: result.rate * amount1,
+            type: "Exchanged",
+        }
+        return res.status(200).json({ message: "Remote exchange fetched successfully", statusCode: 200, data: exchangeObj });
+    } catch (error) {
+        console.log
+        res.status(500).json({ message: error.message || "something went wrong", statusCode: 500 })
+
+    }
+
 
 }

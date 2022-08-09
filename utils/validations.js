@@ -38,4 +38,19 @@ const createExchangeValidation = [
     .withMessage('currencyFrom must be a string'), ,
 
 ]
-module.exports = { createExchangeValidation }
+
+const ExchangeBodyValidation = [
+    body('coin')
+    .trim()
+    .notEmpty()
+    .withMessage('coin abbreviation is required')
+    .isString()
+    .withMessage('coin abbreviation must be a string'),
+    body('fiat')
+    .trim()
+    .notEmpty()
+    .withMessage('fiat currency abbreviation is required')
+    .isString()
+    .withMessage('fiat currency abbreviation must be a string'),
+]
+module.exports = { createExchangeValidation, ExchangeBodyValidation }
