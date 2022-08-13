@@ -7,5 +7,9 @@ exports.Coins = [{
         "name": "Etherum",
         "symbol": "ETH"
     },
+    {
+        "name": "Ripple",
+        "symbol": "XRP"
+    },
 
 ]

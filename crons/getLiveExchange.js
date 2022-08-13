@@ -53,11 +53,12 @@ exports.getLiveExchangesCryptoToFiatAndSave = async() => {
                 }
 
                 let createdExchange = await Exchange.create(exchangeObj)
-                console.log(createdExchange)
 
             }
 
         }
+        const exchanges = await Exchange.find({}).limit(50)
+        return exchanges
 
     } catch (error) {
         console.log(error);

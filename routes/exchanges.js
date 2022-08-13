@@ -15,4 +15,4 @@ exchangeRouter.get("/:id", getById);
 exchangeRouter.post("/", createExchangeValidation, create);
 exchangeRouter.post("/coin-to-fiat", ExchangeBodyValidation, getLiveCoinToFiat);
 
-module.exports = exchangeRouter;
+module.exports = { exchangeRouter };

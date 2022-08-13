@@ -35,7 +35,7 @@ const createExchangeValidation = [
     .notEmpty()
     .withMessage('type is required')
     .isString()
-    .withMessage('currencyFrom must be a string'), ,
+    .withMessage('currencyFrom must be a string'),
 
 ]
 
